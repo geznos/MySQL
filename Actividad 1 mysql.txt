@@ -1,0 +1,39 @@
+MariaDB [clase]> describe datos;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| Nombre | varchar(20) | YES  |     | NULL    |       |
+| Cedula | int(8)      | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+MariaDB [clase]> describe curso;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Lenguajes | varchar(40) | YES  |     | NULL    |       |
+| Software  | varchar(40) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+MariaDB [clase]> select * from datos order by Cedula desc;
++---------+----------+
+| Nombre  | Cedula   |
++---------+----------+
+| Edwin   | 26550031 |
+| Daniel  | 23761749 |
+| Adrian  | 19747479 |
+| Gabriel | 18978732 |
+| Alberto | 18340024 |
++---------+----------+
+5 rows in set (0.00 sec)
+
+MariaDB [clase]> select * from curso where Software like '%Sub%';
++------------+-----------+
+| Lenguajes  | Software  |
++------------+-----------+
+| Javascript | Sublime 3 |
+| Css        | Sublime 3 |
+| Jquery     | Sublime 3 |
++------------+-----------+
+3 rows in set (0.09 sec)
